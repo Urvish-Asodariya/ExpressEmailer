@@ -1,5 +1,5 @@
-const express=require("express");
-const app=express();
+const express = require("express");
+const app = express();
 const fileUpload = require("express-fileupload");
 const sendMail = require("./services/sendMail");
 const path = require('path');
@@ -7,9 +7,11 @@ require("dotenv").config();
 
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+app.set("views", path.resolve("./form"));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    return res.render("index");
 });
 
 
@@ -33,10 +35,10 @@ app.post("/mail", async (req, res) => {
     }
 });
 
-app.listen(8080,(err)=>{
-    if(err){
+app.listen(8080, (err) => {
+    if (err) {
         console.log(err);
-    }else{
+    } else {
         console.log("server is running on port 8080");
     }
 });
