@@ -19,4 +19,4 @@ ExpressEmailer is a full-stack email-sending solution built with **Node.js** and
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ExpressEmailer.git
+   git clone https://github.com/Urvish-Asodariya/ExpressEmailer.git
